@@ -178,3 +178,32 @@ This will be parsed into the dictionary as follows:
 }
 
 ```
+Then access accordingly:
+	
+```
+var item_type:Array[String]=command.get_second_argument()
+var item_id:Array[String]=command.get_third_argument()
+var pos:Array[String]=command.get_argument("--p")
+var rot:Array[String]=command.get_argument("--r")
+# Now work with the data accordingly, being sure to convert the strings to floats.
+```
+### Or simple again...
+
+But you may not always need the --<command> syntax. Maybe you just wish to feed in
+arbitrary words and your function will figure out the rest.
+
+```
+/give_little_pink_houses Jack Diane Me
+```
+Becomes:
+```
+{
+	"args": ["/give_little_pink_houses", "Jack", "Diane", "Me"],
+	"1": "Jack",
+	"2": "Diane",
+	"3": "Me",
+	"command": "/give_little_pink_houses",
+	"argument_string": "/give_little_pink_houses Jack Diane Me",
+}
+
+```

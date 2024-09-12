@@ -100,3 +100,49 @@ The arguments dictionary in the class now contains this data:
 }
 
 ```
+However you do not have to access the dictionary directly. I'm just showing it 
+here so you can see what is available to you.
+
+To access the data:
+	
+```
+if command.is_command("/teleport"):
+	# this is the teleport command...
+	pass
+
+# Does it have the necessary --p argument? (in this case, --p is position)
+
+if command.has_argument("--p"):
+	# user has submitted the argument properly. We can grab the data.
+	
+	var coords:Array = command.get_argument("--p")
+	
+	# this will contain an array of strings you must convert to floats.
+	
+	# ["5", "20", "-5.2"]
+
+```
+
+### More complex uses...
+
+So long as you stick to the syntax...
+
+```
+/some_command --a 1 2 3 --b this that other
+```
+
+Things should go well.
+
+Here is a more complex example. For the modding features of my game, much of 
+the things are spawned in by commands as well, though the text commands are 
+generated in gdscript and fed into my command system.
+
+So this command:
+	
+```
+/spawn structures 8 --p 1.82052993774414 0.00000023841858 0.74802494049072 --r -0.00000085377366 0.00001195283585 0
+```
+
+... is easily parsed by the parser. In this case, the command is saying:
+
+***Spawn a structure of id=8 at position <numbers> and rotation <numbers>***

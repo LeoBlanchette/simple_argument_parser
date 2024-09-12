@@ -92,6 +92,12 @@ func has_argument(arg:String)->bool:
 		return true
 	return false
 
+## Verify which command was given. See documentation.
+func is_command(command:String)->bool:
+	if arguments["command"] == command.strip_edges():
+		return true
+	return false
+
 ## Easy function to get the first argument. In a string such as 
 ## /eat fish salmon "/eat" will be returned.
 func get_first_argument()->String:

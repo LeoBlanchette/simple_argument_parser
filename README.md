@@ -64,3 +64,39 @@ This will contain the following dictionary:
 }
 
 ```
+Since it is a simple command, the dictionary is simple. 
+Verify it is a given command like this:
+
+```
+if command.is_command("/print_index"):
+	# Do all the things...
+	print("Its definitely a print_index command. Run the print_index() function now.")
+```
+
+## Simple named argument command case...
+
+Your in development and you wish to teleport around your level by typing in
+coordinates. Assuming you've submitted the command via a line-edit, or something...
+
+```
+var command_string:String = "/teleport --p 5 20 -5.2"
+
+# Be sure to verify if command_string.begins_with("/"): before parsing.
+
+var command:ArgParser = ArgParser.new(command_string)
+
+```
+
+The arguments dictionary in the class now contains this data:
+	
+```
+{
+	"args": ["/teleport", "--p", "5", "20", "-5.2"],
+	"1": "5",
+	"2": "20",
+	"command": "/teleport",
+	"--p": ["5", "20", "-5.2"],
+	"argument_string": "/teleport --p 5 20 -5.2",
+}
+
+```

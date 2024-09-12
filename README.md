@@ -75,7 +75,7 @@ if command.is_command("/print_index"):
 
 ## Simple named argument command case...
 
-Your in development and you wish to teleport around your level by typing in
+You are testing a level and you wish to teleport around your level by typing in
 coordinates. Assuming you've submitted the command via a line-edit, or something...
 
 ```

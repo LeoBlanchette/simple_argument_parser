@@ -16,14 +16,18 @@ to kick the player.
 
 or 
 
+```
 /teleport --p 2 20.5 3
+```
 
 ...Where the ArgParser will grab the named argument --p with the array of 3 numbers
 as strings.
 
 or 
 
+```
 /equip 20 --pid 39493565
+```
 
 ....Where you may equip item 20 to player who's peer_id is 39493565.
 

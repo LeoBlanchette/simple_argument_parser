@@ -181,10 +181,18 @@ This will be parsed into the dictionary as follows:
 Then access accordingly:
 	
 ```
-var item_type:Array[String]=command.get_second_argument()
-var item_id:Array[String]=command.get_third_argument()
+# Get the second argument, which is "structures" (the first is the command itself)
+var item_type:String=command.get_second_argument()
+
+# Get the third argument, which is the id (will have to convert to int, btw, cuz string now)
+var item_id:String=command.get_third_argument()
+
+# The position will be an array of 3 numbers submitted by user, string form...
 var pos:Array[String]=command.get_argument("--p")
+
+# And likewise the rotation...
 var rot:Array[String]=command.get_argument("--r")
+
 # Now work with the data accordingly, being sure to convert the strings to floats.
 ```
 ### Or simple again...
@@ -206,4 +214,26 @@ Becomes:
 	"argument_string": "/give_little_pink_houses Jack Diane Me",
 }
 
+# Simply use the simple quick-shots for this one...
+
+var first_person:String = command.get_argument("1", "Me)
+
+var second_person:String = command.get_argument("2")
+
+var third_person:String = command.get_argument("3")
+
+
 ```
+Notice in first_person above, I fed in a default argument. 
+
+These will return null if no argument is found at given position unless you 
+provide a default.
+
+### Conclusion.
+Feel free to check out the main script arg_parser.gd to see how it works.
+This is a very simple syntax meant for this very simple purpose of in-game 
+text commands or dev use.
+
+If you have any improvements to add, I would love to see them.
+
+Thank you.

@@ -145,4 +145,4 @@ So this command:
 
 ... is easily parsed by the parser. In this case, the command is saying:
 
-***Spawn a structure of id=8 at position <numbers> and rotation <numbers>***
+***Spawn a structure of id=8 at position [values] and rotation [values]***

@@ -5,7 +5,7 @@ interface or line-edit.
 
 ## Simple syntax examples:
 
-This simple ArParser is made for the following simple syntax:
+This simple ArgParser is made for the following simple syntax:
 
 ```
 /kick <player>

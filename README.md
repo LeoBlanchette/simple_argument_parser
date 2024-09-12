@@ -7,9 +7,9 @@ interface or line-edit.
 
 This simple ArParser is made for the following simple syntax:
 
-'''
+```
 /kick <player>
-'''
+```
 
 ...Where the first argument of player can be a name that a script will utilize
 to kick the player.
@@ -42,7 +42,9 @@ created a function to list the items, I can initiate it through the text command
 as follows:
 
 ```
-var command_string:String = /print_index
+var command_string:String = "/print_index"
+
+# Be sure to verify if command_string.begins_with("/"): before parsing.
 
 var command:ArgParser = ArgParser.new(command_string)
 
